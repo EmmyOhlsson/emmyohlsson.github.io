@@ -224,6 +224,63 @@ img {
     text-align: center;
   }
 }
+.image-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.left-image img {
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.right-bubble {
+  background: #ffeaf5; /* ljusrosa bubblan */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 450px;
+  text-align: left;
+}
+
+.right-bubble h2 {
+  margin-bottom: 15px;
+  color: #d63384; /* snygg rosa rubrik */
+}
+
+.right-bubble p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.right-bubble ul {
+  list-style: none;
+  padding: 0;
+}
+
+.right-bubble ul li {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Mobilanpassning */
+@media (max-width: 768px) {
+  .image-bubble {
+    flex-direction: column;
+    text-align: center;
+  }
+  .right-bubble {
+    text-align: center;
+  }
+}
     </style>
 </head>
 <body>
@@ -284,6 +341,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://drakenbergsjolin.com/sv/collections/new-arrivals?gad_source=1&gad_campaignid=22317129578&gbraid=0AAAAAC2llpXyKjig3WJykiuoIBJcg-VkN&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZgssB8nEbLJXc3qHFbLizojaGKdAIxqS8T4DIy8e_MQJl9IzSAtNWhoCbkEQAvD_BwE" target="_blank" rel="noopener">Drakenberg Sjölin - Smycken</a>
   </div>
 </div>
+<section class="image-bubble">
+  <div class="left-image">
+    <img src="bilder/minbild.jpg" alt="Min bild">
+  </div>
+  <div class="right-bubble">
+    <h2>Varför välja mig?</h2>
+    <p>
+      Jag brinner för kreativitet, strategi och att skapa marknadsföring som verkligen gör skillnad.
+      Här får du en inblick i mina styrkor och passioner.
+    </p>
+    <ul>
+      <li>✨ Growth Marketing på Berghs</li>
+      <li>✨ Sociala medier & varumärkesbyggande</li>
+      <li>✨ Kreativa projekt & samarbeten</li>
+    </ul>
+  </div>
+</section>
     </main>
 </body>
 </html>
