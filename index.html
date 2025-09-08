@@ -27,7 +27,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        main {
            padding: 20px;
        }
-       img {
+       .cover {
+  width: 100%;       /* fyller hela bredden */
+  max-width: none;   /* ingen begränsning */
+  height: auto;      /* behåller proportionerna */
+  display: block;
+  margin: 0 auto;    /* centrerad */
+}
+img {
            max-width: 200px;
            margin: 20px 0;
        }
