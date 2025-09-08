@@ -19,11 +19,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            margin: 0;
            padding: 0;
        }
-       header {
-           background-color: #79c0fe;
-           color: white;
-           padding: 20px 0;
-       }
+      header {
+  background-color: #79c0fe;
+  padding: 20px;
+}
+
+.logo {
+  text-align: left;            /* vänsterjusterad */
+  font-size: 2em;              /* storlek på loggan */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;              /* ärver vit färg */
+}
+
+.logo a:hover {
+  color: #f9a3f9;              /* ändrar färg när man hovrar */
+}
        main {
            padding: 20px;
        }
@@ -101,7 +117,9 @@ img {
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
     <header>
-        <h1>Growth Marketing!</h1>
+  <div class="logo">
+    <a href="/">Emmy Ohlsson</a>
+  </div>
     </header>
     <main>
         <p>Det här är min nya dåliga hemsida.</p>
