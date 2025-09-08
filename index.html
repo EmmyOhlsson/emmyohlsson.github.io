@@ -21,12 +21,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        }
       header {
   background-color: #79c0fe;
-  padding: 20px;
+  padding: 20px 40px;
+  display: flex;                  /* gör radlayout */
+  justify-content: space-between; /* logga till vänster, länkar till höger */
+  align-items: center;
 }
 
 .logo {
-  text-align: left;            /* vänsterjusterad */
-  font-size: 2em;              /* storlek på loggan */
+  font-size: 2em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: white;
@@ -34,11 +36,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 .logo a {
   text-decoration: none;
-  color: inherit;              /* ärver vit färg */
+  color: inherit;
 }
 
 .logo a:hover {
-  color: #f9a3f9;              /* ändrar färg när man hovrar */
+  color: #f9a3f9;
+}
+
+.social-links a {
+  margin-left: 20px;             /* mellanrum mellan länkarna */
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  color: #f9a3f9;
 }
        main {
            padding: 20px;
@@ -120,6 +133,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="logo">
     <a href="/">Emmy Ohlsson</a>
   </div>
+  <nav class="social-links">
+    <a href="https://www.tiktok.com/@emmsano?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.instagram.com/emmyohlssons/" target="_blank" rel="noopener">Instagram</a>
+  </nav>
     </header>
     <main>
         <p>Det här är min nya dåliga hemsida.</p>
