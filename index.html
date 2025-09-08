@@ -121,7 +121,62 @@ img {
 .card .links a:hover {
   text-decoration: underline;
 }
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 50px;
+}
 
+.hero-image img {
+  max-width: 350px;
+  border-radius: 50%;         /* gör bilden rund */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.hero-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-text .cta {
+  display: inline-block;
+  background-color: #79c0fe;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text .cta:hover {
+  background-color: #f9a3f9;
+}
+
+/* Responsiv för mobil */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
     </style>
 </head>
 <body>
@@ -138,6 +193,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://www.instagram.com/emmyohlssons/" target="_blank" rel="noopener">Instagram</a>
   </nav>
     </header>
+    <section class="hero">
+  <div class="hero-image">
+    <img src="DIN-BILD-HÄR.jpg" alt="Emmy Ohlsson">
+  </div>
+  <div class="hero-text">
+    <h1>Hej, jag är Emmy Ohlsson</h1>
+    <p>Growth Marketing-student på Berghs. Jag brinner för kreativ marknadsföring, sociala medier och att bygga varumärken som gör skillnad.</p>
+    <a class="cta" href="https://www.instagram.com/emmyohlssons/" target="_blank">Följ mig på Instagram</a>
+  </div>
+</section>
     <main>
         <p>Det här är min nya dåliga hemsida.</p>
         <img src="https://static.bonniernews.se/ba/afc10f4a-3da7-4dad-90ae-3e3df3608549.jpeg?crop=2560%2C1440%2Cx0%2Cy0&width=1920&auto=webp&enable=upscale" alt="Apple Logo">
