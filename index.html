@@ -53,6 +53,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .social-links a:hover {
   color: #f9a3f9;
 }
+.awards {
+  display: flex;
+  align-items: stretch;
+  margin: 40px auto;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.awards-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.awards-image {
+  flex: 2; /* tar större plats */
+}
+
+.awards-list {
+  flex: 1; /* smalare del */
+  background: linear-gradient(to bottom, #ffeaf5, #ffcce0);
+  padding: 20px;
+  text-align: left;
+}
+
+.awards-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #d63384; /* girlie rosa */
+}
+
+.awards-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.awards-list li {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 5px;
+}
        main {
            padding: 20px;
        }
@@ -205,7 +252,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main>
         <p>Klicka på knappen för en hälsning:</p>
         <button onclick="alert('Hej, nu kommer du bli hackad 😃')">Tryck här</button>
-        <p>
+          <section class="awards">
+  <div class="awards-image">
+    <img src="bilder/minbild.jpg" alt="Exempelbild">
+  </div>
+  <div class="awards-list">
+    <h2>AWARDS</h2>
+    <ul>
+      <li>STUDIO AWARDS</li>
+      <li>HAIR AWARDS</li>
+      <li>GLAMOUR</li>
+      <li>BEST MASTER OF 203</li>
+      <li>VOGUE</li>
+      <li>WOMEN OF THE YEAR</li>
+    </ul>
+  </div>
+</section>
 <div class="card">
   <h3>Företag jag vill jobba med</h3>
   <p>Dröm stort.</p>
@@ -213,8 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://warmly.se/collections/frontpage?gad_campaignid=20496064073&gad_source=1&gbraid=0AAAAApTB41JisNEXdZvcnVNcZchbsI9pe&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZgZogFqxkb1gRxfGtH4P4wT5zPtC7x5miwfFfXiiF_aPRzCUJGQSYxoCv48QAvD_BwE" target="_blank" rel="noopener">Warmly - Handvärmare/powerbanks</a>
     <a href="https://arakii.com/?gad_source=1&gad_campaignid=21141144472&gbraid=0AAAAAo5i8GhBGVt43lC3bX2Q5g_CX5iow&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZlnYIS-xcqdp9ZydqFs2Lx2lr9d_pVN0SBbFU2gjSv5vTd9ILPbUUBoCpSIQAvD_BwE" target="_blank" rel="noopener">Arakii - Kläder</a>
   </div>
-</div>
-</p>
+  </div>
 <div class="card">
   <h3>Företag jag har jobbat med</h3>
   <p>En dag kanske jag kommer tillbaka, vem vet.</p>
