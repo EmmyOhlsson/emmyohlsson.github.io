@@ -42,40 +42,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .logo a:hover {
   color: #f9a3f9;
 }
-
 .social-links a {
   margin-left: 20px;             /* mellanrum mellan länkarna */
   text-decoration: none;
   color: white;
   font-weight: bold;
-}
-
-.social-links a:hover {
-  color: #f9a3f9;
-}
-       main {
-           padding: 20px;
-       }
-       .cover {
-  width: 100%;       /* fyller hela bredden */
-  max-width: none;   /* ingen begränsning */
-  height: auto;      /* behåller proportionerna */
-  display: block;
-  margin: 0 auto;    /* centrerad */
-}
-.confetti-flower {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  pointer-events: none;
-  animation: fly 1s ease-out forwards;
-}
-
-@keyframes fly {
-  to {
-    transform: translate(var(--x), var(--y)) rotate(720deg);
-    opacity: 0;
-  }
 }
 img {
            max-width: 200px;
@@ -282,42 +253,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Hej, jag pluggar Growth Marketing på Berghs och älskar att lära mig nya saker! Hör gärna av er till mig om ni vill ha hjälp med er marketing.</p>
     <a class="cta" href="mailto:emmy.ohlsson@student.berghs.se" target="_blank">Mejla mig</a>
   </div>
-</section>
-    <main>
-      <button id="flowerButton">Tryck här</button>
-      <script>
-  document.getElementById("flowerButton").addEventListener("click", function(e) {
-    // ✅ Först alerten
-    alert('Hej, nu kommer du bli hackad 😃');
-
-    const button = e.target;
-    const rect = button.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    // 🌹 Skapa flera rosor som konfetti
-    for (let i = 0; i < 15; i++) {
-      const flower = document.createElement("img");
-      flower.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Red_rose_icon.svg/1024px-Red_rose_icon.svg.png";
-      flower.classList.add("confetti-flower");
-
-      flower.style.left = centerX + "px";
-      flower.style.top = centerY + "px";
-
-      const angle = Math.random() * 2 * Math.PI;
-      const distance = 80 + Math.random() * 100;
-      flower.style.setProperty("--x", Math.cos(angle) * distance + "px");
-      flower.style.setProperty("--y", Math.sin(angle) * distance + "px");
-
-      document.body.appendChild(flower);
-
-      flower.addEventListener("animationend", () => {
-        flower.remove();
-      });
-    }
-  });
-</script>
-</section>
+       </div> <!-- .hero-text -->
+</section> <!-- stänger hero -->
+<main>
 <div class="card-container">
   <div class="card">
     <h3>Företag jag vill jobba med</h3>
