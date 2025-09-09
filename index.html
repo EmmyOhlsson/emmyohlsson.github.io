@@ -63,6 +63,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   display: block;
   margin: 0 auto;    /* centrerad */
 }
+.confetti-flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  animation: fly 1s ease-out forwards;
+}
+
+@keyframes fly {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(720deg);
+    opacity: 0;
+  }
+}
 img {
            max-width: 200px;
            margin: 20px 0;
@@ -270,8 +284,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
     <main>
-        <p>Klicka på knappen för en hälsning:</p>
-        <button onclick="alert('Hej, nu kommer du bli hackad 😃')">Tryck här</button>
+      <button id="flowerButton">Tryck här</button>
+      <script>
+  document.getElementById("flowerButton").addEventListener("click", function(e) {
+    // ✅ Först alerten
+    alert('Hej, nu kommer du bli hackad 😃');
+
+    const button = e.target;
+    const rect = button.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    // 🌹 Skapa flera rosor som konfetti
+    for (let i = 0; i < 15; i++) {
+      const flower = document.createElement("img");
+      flower.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Red_rose_icon.svg/1024px-Red_rose_icon.svg.png";
+      flower.classList.add("confetti-flower");
+
+      flower.style.left = centerX + "px";
+      flower.style.top = centerY + "px";
+
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = 80 + Math.random() * 100;
+      flower.style.setProperty("--x", Math.cos(angle) * distance + "px");
+      flower.style.setProperty("--y", Math.sin(angle) * distance + "px");
+
+      document.body.appendChild(flower);
+
+      flower.addEventListener("animationend", () => {
+        flower.remove();
+      });
+    }
+  });
+</script>
 </section>
 <div class="card-container">
   <div class="card">
@@ -292,7 +337,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div> <!-- ✅ här stänger card-container -->
-
 <section class="image-bubble">
   <div class="left-image">
     <img src="https://media.licdn.com/dms/image/v2/D4D03AQHqazJfi_ll4A/profile-displayphoto-crop_800_800/B4DZkq2AItGgAM-/0/1757360427831?e=1759968000&v=beta&t=I8mU-nHbUA0JQPPW97ctQ89wg-bK7g5QzM8NMDNKdtU" alt="Min bild">
