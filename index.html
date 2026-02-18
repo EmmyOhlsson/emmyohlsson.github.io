@@ -1,302 +1,221 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NMFC6SPN');</script>
-<!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Första Hemsida</title>
+    <title>PORTFOLIO | GROWTH & CREATIVE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
     <style>
-  body {
-           font-family: Arial, sans-serif;
-           text-align: center;
-           background-color: #ffffff;
-           margin: 0;
-           padding: 0;
-       }
-      header {
-  background-color: #79c0fe;
-  padding: 20px 40px;
-  display: flex;                  /* gör radlayout */
-  justify-content: space-between; /* logga till vänster, länkar till höger */
-  align-items: center;
-}
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #E5E5E5;
+            --paris-pink: #f8f1f1; /* En extremt ljus touch av Paris-chic */
+        }
 
-.logo {
-  font-size: 2em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: white;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-.logo a {
-  text-decoration: none;
-  color: inherit;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
 
-.logo a:hover {
-  color: #f9a3f9;
-}
-.social-links a {
-  margin-left: 20px;             /* mellanrum mellan länkarna */
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-img {
-           max-width: 200px;
-           margin: 20px 0;
-       }
-       button {
-           background-color: #f9a3f9;
-           color: white;
-           border: none;
-           padding: 10px 20px;
-           cursor: pointer;
-           font-size: 16px;
-           border-radius: 5px;
-       }
-       button:hover {
-           background-color: #84c2f5;
-       }
-       /* Bubblan (kortet) */
-.card {
-  background-color: #f1f1f1;   /* bakgrundsfärg */
-  border-radius: 15px;         /* rundade hörn */
-  padding: 20px;               /* luft inuti */
-  margin: 20px auto;           /* luft runt omkring */
-  max-width: 400px;            /* maxbredd */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* skugga */
-}
-.card h3 {
-  margin-top: 0;
-}
-.card .links a {
-  display: block;
-  margin: 10px 0;
-  text-decoration: none;
-  color: #0077cc;
-}
-.card .links a:hover {
-  text-decoration: underline;
-}
-/* Bubblan (kortet) */
-.card {
-  background-color: #f1f1f1;   /* bakgrundsfärg */
-  border-radius: 15px;         /* rundade hörn */
-  padding: 20px;               /* luft inuti */
-  margin: 20px auto;           /* luft runt omkring */
-  max-width: 400px;            /* maxbredd */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* skugga */
-}
-.card h3 {
-  margin-top: 0;
-}
-.card .links a {
-  display: block;
-  margin: 10px 0;
-  text-decoration: none;
-  color: #0077cc;
-}
-.card .links a:hover {
-  text-decoration: underline;
-}
-.card-container {
-  display: flex;
-  justify-content: center;  /* centrerar på sidan */
-  gap: 20px;                /* avstånd mellan rutorna */
-  flex-wrap: wrap;          /* så de hoppar ner snyggt på mobil */
-}
-.card {
-  flex: 1;                  /* gör så båda får lika plats */
-  max-width: 400px;         /* håller samma maxbredd */
-}
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px;
-  gap: 50px;
-}
+        /* NAVIGATION */
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.9);
+            z-index: 100;
+        }
 
-.hero-image img {
-  max-width: 350px;
-  border-radius: 50%;         /* gör bilden rund */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+        /* HERO SECTION */
+        header {
+            padding: 8vh 5%;
+            border-bottom: 1px solid #000;
+        }
 
-.hero-text {
-  max-width: 500px;
-  text-align: left;
-}
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.85;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
+        .hero-subtitle {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
 
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-.cta {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 24px;
-  border-radius: 25px;
-  background-color: #79c0fe;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+        /* STATS / INFO SECTION */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            border-bottom: 1px solid #000;
+        }
 
-.cta:hover {
-  background-color: #f9a3f9;
-}
+        .info-box {
+            padding: 4rem 5%;
+            border-right: 1px solid #000;
+        }
 
-/* Responsiv för mobil */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
+        .info-box:last-child { border-right: none; }
 
-  .hero-text {
-    text-align: center;
-  }
-}
-.image-bubble {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 20px;
-}
+        .label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
 
-.left-image img {
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
+        .info-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
-.right-bubble {
-  background: #ffeaf5; /* ljusrosa bubblan */
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  max-width: 450px;
-  text-align: left;
-}
+        /* CTA SECTION - PARIS */
+        .paris-cta {
+            background-color: var(--paris-pink);
+            padding: 10rem 5%;
+            text-align: center;
+            position: relative;
+        }
 
-.right-bubble h2 {
-  margin-bottom: 15px;
-  color: #d63384; /* snygg rosa rubrik */
-}
+        .paris-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 5rem);
+            margin-bottom: 2rem;
+        }
 
-.right-bubble p {
-  margin-bottom: 20px;
-  line-height: 1.6;
-  color: #333;
-}
+        .btn {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
 
-.right-bubble ul {
-  list-style: none;
-  padding: 0;
-}
+        .btn:hover {
+            transform: translateY(-5px);
+            background: #333;
+        }
 
-.right-bubble ul li {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #555;
-}
-  .links-section {
-  margin: 40px 0;
-  text-align: center;
-}
+        /* TIKTOK GRID PREVIEW (Placeholder) */
+        .tiktok-preview {
+            padding: 5%;
+            background: #000;
+            color: #fff;
+        }
 
-/* Mobilanpassning */
-@media (max-width: 768px) {
-  .image-bubble {
-    flex-direction: column;
-    text-align: center;
-  }
-  .right-bubble {
-    text-align: center;
-  }
-}
+        /* FOOTER */
+        footer {
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.8rem;
+        }
+
+        i { font-family: 'Playfair Display', serif; font-style: italic; }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .info-box { border-right: none; border-bottom: 1px solid #000; }
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMFC6SPN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <header>
-  <div class="logo">
-    <a href="/">Emmy Ohlsson</a>
-  </div>
-  <nav class="social-links">
-    <a href="https://www.tiktok.com/@emmsano?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://www.instagram.com/emmyohlssons/" target="_blank" rel="noopener">Instagram</a>
-  </nav>
-    </header>
-    <section class="hero">
-  <div class="hero-image">
-    <img src="images/emmy2.jpeg" alt="Emmy Ohlsson">
-  </div>
-  <div class="hero-text">
-    <p>Hej, jag pluggar Growth Marketing på Berghs och älskar att lära mig nya saker! Hör gärna av er till mig om ni vill ha hjälp med er marketing.</p>
-    <a class="cta" href="mailto:emmy.ohlsson@student.berghs.se" target="_blank">Mejla mig</a>
-  </div>
-       </div> <!-- .hero-text -->
-</section> <!-- stänger hero -->
-<main>
-<div class="card-container">
-  <div class="card">
-    <h3>Företag jag vill jobba med</h3>
-    <p>Dröm stort.</p>
-    <div class="links">
-      <a href="https://warmly.se" target="_blank" rel="noopener">Warmly - Handvärmare/powerbanks</a>
-      <a href="https://arakii.com" target="_blank" rel="noopener">Arakii - Kläder</a>
+<nav>
+    <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; text-transform: none;">Emmy</div>
+    <div>
+        <a href="https://www.tiktok.com/@emmsano?is_from_webapp=1&sender_device=pc" target="_blank" style="text-decoration:none; color:black; margin-left:20px;">TikTok</a>
+        <a href="https://www.linkedin.com/in/emmy-ohlsson-878b162a5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6u9ftMGuQ4qHEpQwUeKYMg%3D%3D" target="_blank" style="text-decoration:none; color:black; margin-left:20px;">LinkedIn</a>
+        <a href="mailto:emmy.ohlsson@student.berghs.se" style="text-decoration:none; color:black; margin-left:20px;">Kontakt</a>
     </div>
-  </div>
+</nav>
+    
 
-  <div class="card">
-    <h3>Företag jag har jobbat med</h3>
-    <p>En dag kanske jag kommer tillbaka, vem vet.</p>
-    <div class="links">
-      <a href="https://www.scorett.se" target="_blank" rel="noopener">Scorett - Skor</a>
-      <a href="https://drakenbergsjolin.com" target="_blank" rel="noopener">Drakenberg Sjölin - Smycken</a>
-    </div>
-  </div>
-</div> <!-- ✅ här stänger card-container -->
-<section class="image-bubble">
-  <div class="left-image">
-    <img src="images/emmy1.jpeg" alt="Min bild">
-  </div>
-  <div class="right-bubble">
-    <h2>Growth Mindset</h2>
-    <p>
-      Jag har lärt mig att tänka datadrivet och att alltid ställa frågan ”Vad kan bli bättre?”. 
-      Det är grunden i ett Growth Mindset: Att förbättringar inte handlar om mig som person utan om processen. 
-      Jag har blivit bättre på att se förbättringar som naturliga steg framåt och att analysera både styrkor och svagheter med ett öppet sinne.
-    </p>
-  </div>
-</section>
-<section class="links-section">
-  <h3>Mina länkar</h3>
-  <a class="cta" href="https://docs.google.com/document/d/1lA0jS4yQVM0J0n4juBEQ9gBfxN-a_hyJXEZHDDVmOTI/edit?usp=sharing" target="_blank" rel="noopener">Google Docs – Inlämning</a>
-  <a class="cta" href="https://lookerstudio.google.com/reporting/0fbd41d7-ea83-4407-8b77-0b02add75182" target="_blank" rel="noopener">Looker Studio – Rapport</a>
-</section>
+    <header>
+        <h1 class="hero-title">
+            Growth <br>
+            <i>& Content.</i>
+        </h1>
+        <p class="hero-subtitle">
+            Baserad i Stockholm. Studerar Growth Marketing på <b>Berghs School of Communication</b>. 
+            Digital kreatör som bygger communities genom autentiskt historieberättande på TikTok.
+        </p>
+    </header>
+
+    <main>
+        <section class="info-grid">
+            <div class="info-box">
+                <span class="label">Utbildning</span>
+                <h3>Berghs SoC</h3>
+                <p>Fokuserar på datadriven tillväxt, psykologi bakom konvertering och hur man skalar varumärken i den digitala eran.</p>
+            </div>
+            <div class="info-box">
+                <span class="label">Sociala Medier</span>
+                <h3>TikTok Vloggar</h3>
+                <p>Skapar dagligt innehåll för en engagerad målgrupp. Expertis inom kortvideo-formatet och organisk räckvidd.</p>
+            </div>
+            <div class="info-box">
+                <span class="label">Expertis</span>
+                <h3>Marketing</h3>
+                <p>Growth loops, A/B-testing och visuell estetik. Jag förstår balansen mellan hårda siffror och kreativ höjd.</p>
+            </div>
+        </section>
+
+        <section class="paris-cta">
+            <span class="label">Exklusiv Guide</span>
+            <h2>Ska du till Paris?</h2>
+            <p style="margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Jag har samlat mina absoluta favoritställen – från de dolda caféerna i Marais till de bästa vyerna som TikTok ännu inte hittat.
+            </p>
+            <a href="paris.html" class="btn">Få mina Paris-tips</a>
+        </section>
+
+        <section class="tiktok-preview">
+            <span class="label" style="color: #666;">Latest on TikTok</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem;">Vloggar & Inblickar</h2>
+            <div style="height: 300px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; opacity: 0.5;">
+                [Här kan du bädda in dina TikTok-videos]
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div>
+            <p>© 2026 DITT NAMN</p>
+            <p>Growth Marketer & Creator</p>
+        </div>
+        <div style="text-align: right;">
+            <p>LÅT OSS SAMARBETA</p>
+            <p><b>hej@dittnamn.se</b></p>
+        </div>
+    </footer>
+
 </body>
 </html>

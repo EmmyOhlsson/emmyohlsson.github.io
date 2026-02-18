@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARIS TIPS | CAFÉS & PÂTISSERIES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #E5E5E5;
+            --paris-pink: #f8f1f1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.9);
+            z-index: 100;
+        }
+
+        nav a { text-decoration: none; color: #000; }
+
+        header {
+            padding: 8vh 5%;
+            border-bottom: 1px solid #000;
+            background-color: var(--paris-pink);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 12vw, 8rem);
+            line-height: 0.85;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .section-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 4rem 5% 1rem 5%;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 0.5rem;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1px;
+            background-color: #000;
+            border-bottom: 1px solid #000;
+        }
+
+        .tip-card {
+            background-color: #fff;
+            padding: 3rem 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background 0.3s ease;
+        }
+
+        .tip-card:hover {
+            background-color: var(--paris-pink);
+        }
+
+        .tip-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card h4 {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .tip-card p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #eee;
+            padding: 0.3rem 0.7rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.8rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .tips-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div><a href="index.html">Emmy — Portfolio</a></div>
+        <div>Hidden Gems Paris 2026</div>
+    </nav>
+
+    <header>
+        <span class="tag" style="background: #000; color: #fff;">Curated List</span>
+        <h1 class="hero-title">
+            Cafés & <br>
+            <i>Pâtisseries.</i>
+        </h1>
+        <p class="hero-subtitle">
+            Glöm turistfällorna. Här är de undangömda pärlorna där parisarna själva köar för sin morgoncroissant eller eftermiddagskaffe.
+        </p>
+        <a href="index.html" class="back-btn">← Tillbaka till hem</a>
+    </header>
+
+    <main>
+        <span class="section-label">Hidden Gem Cafés</span>
+        <section class="tips-grid">
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Belleville</span>
+                    <h3>La Fontaine de Belleville</h3>
+                    <h4>Varför den är speciell:</h4>
+                    <p>En klassisk fransk bistro som specialiserat sig på "specialty coffee". Den har en av Paris trevligaste terrasser för people-watching i ett område som känns genuint och trendigt.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Montmartre Hidden</span>
+                    <h3>Le Main Noir</h3>
+                    <h4>Varför den är speciell:</h4>
+                    <p>Ligger nära Montmartre men långt från turistmassorna. De är kända för att ha stadens kanske bästa kaffe och kreativa, ofta veganska rätter som ser ut som konstverk.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Future-Themed</span>
+                    <h3>Café Pli</h3>
+                    <h4>Varför den är speciell:</h4>
+                    <p>En otroligt mysig plats där du kan skriva ett brev till dig själv i framtiden. En unik, reflekterande upplevelse mitt i stadens brus.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Under the Glass</span>
+                    <h3>Alaïa Café</h3>
+                    <h4>Varför den är speciell:</h4>
+                    <p>Gömd på innergården av Azzedine Alaïa Foundation. Det är en öppen innergård under ett glastak där mode och italienska specialiteter möts. Väldigt chic och exklusiv känsla.</p>
+                </div>
+            </div>
+        </section>
+
+        <span class="section-label">Top Tier Pâtisseries</span>
+        <section class="tips-grid">
+            <div class="tip-card">
+                <div>
+                    <span class="tag">The Modern Master</span>
+                    <h3>Yann Couvreur</h3>
+                    <h4>Varför den är känd:</h4>
+                    <p>Inga konstgjorda färgämnen, bara rena smaker. Hans Paris-Brest Noisette är legendarisk. Logotypen med räven gör varje bakverk omedelbart igenkännbart på Instagram.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">The History</span>
+                    <h3>Stohrer</h3>
+                    <h4>Varför den är känd:</h4>
+                    <p>Den äldsta pâtisserien i Paris (grundad 1730!). Det var här "Baba au Rhum" uppfanns. Butiken i sig är ett konstverk med fantastiska takmålningar.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Artisanal Choice</span>
+                    <h3>Tapisserie</h3>
+                    <h4>Varför den är speciell:</h4>
+                    <p>Skapad av teamet bakom den berömda Michelin-restaurangen Septime. Allt är småskaligt, ekologiskt och extremt välsmakande. Deras lönnsirapstert är ett måste.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">The Icon</span>
+                    <h3>Du Pain et des Idées</h3>
+                    <h4>Varför den är känd:</h4>
+                    <p>Världskänd för sin "Escargot Chocolat Pistache". Den rustika 1800-talsmiljön och doften av nybakat bröd gör detta till den ultimata parisiska upplevelsen.</p>
+                </div>
+            </div>
+        </section>
+
+        <span class="section-label">Specialist Spots</span>
+        <section class="tips-grid">
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Chokladfantasten</span>
+                    <h3>Plaq</h3>
+                    <h4>Varför besöka:</h4>
+                    <p>En "bean-to-bar" chokladbutik där du kan se produktionen. Deras chokladkakor och chokladbakverk är på en helt annan nivå än det du hittar i vanliga butiker.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Trendigt & Veganskt</span>
+                    <h3>Le Chat-Rivari</h3>
+                    <h4>Varför besöka:</h4>
+                    <p>Ett veganskt café med en twist: du kan adoptera en katt här! Perfekt för djurvänner som vill ha en lugn paus i en personlig miljö.</p>
+                </div>
+            </div>
+            <div class="tip-card">
+                <div>
+                    <span class="tag">Pralinens ursprung</span>
+                    <h3>Mazet</h3>
+                    <h4>Varför besöka:</h4>
+                    <p>Här påstås det att det ursprungliga pralinreceptet från 1600-talet finns. Deras rostade, karamelliserade mandlar är den perfekta presenten att ta med hem.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>© 2026 EMMY OHLSSON</p>
+            <p>Paris Hidden Gems Guide</p>
+        </div>
+        <div style="text-align: right;">
+            <p>FÖLJ RESAN PÅ TIKTOK</p>
+            <p><b>@emmy_in_paris</b></p>
+        </div>
+    </footer>
+
+</body>
+</html>
