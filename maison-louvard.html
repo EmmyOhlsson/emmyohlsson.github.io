@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON LOUVARD | PARIS GUIDE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --paris-pink: #f8f1f1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.9);
+            z-index: 100;
+            border-bottom: 1px solid #000;
+        }
+
+        nav a { text-decoration: none; color: #000; }
+
+        /* Header Area */
+        header {
+            padding: 6vh 5%;
+            background-color: var(--paris-pink);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 0.85;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin: 1.5rem 0;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #000;
+            color: #fff;
+            padding: 0.3rem 0.7rem;
+            display: inline-block;
+        }
+
+        .back-btn {
+            display: inline-block;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        /* Image Section */
+        .image-container {
+            width: 100%;
+            height: 70vh;
+            border-bottom: 1px solid #000;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content Section */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-bottom: 1px solid #000;
+        }
+
+        .description-box {
+            padding: 4rem 10% 4rem 5%;
+            border-right: 1px solid #000;
+        }
+
+        .info-box {
+            padding: 4rem 5%;
+            background-color: #fff;
+        }
+
+        .section-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h4 {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .description-box { border-right: none; border-bottom: 1px solid #000; }
+            .image-container { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div><a href="index.html">Emmy Ohlsson</a></div>
+        <div>Paris Guide 2026</div>
+    </nav>
+
+    <header>
+        <span class="tag">Cafés</span>
+        <h1 class="hero-title">Maison <br><i>Louvard</i></h1>
+        <a href="index.html" class="back-btn">← Tillbaka till listan</a>
+    </header>
+
+    <main>
+       <section class="image-container">
+    <img src="maison-louvard.jpg" alt="Maison Louvard">
+</section>
+
+        <section class="content-grid">
+            <div class="description-box">
+                <span class="section-label">Om stället</span>
+                <h3>Det bästa av två världar.</h3>
+                <p>
+                    När man kliver in på Maison Louvard möts man direkt av doften av nybakat smör och choklad. Det var här den numera virala "Crookien" föddes – en perfekt kombination av en fransk croissant och amerikansk cookie-deg. 
+                </p>
+                <br>
+                <p>
+                    Utsidan är frasig och gyllene, medan insidan gömmer en mjuk, halvgräddad kakdeg med stora bitar av mörk choklad. Det är dekadent, det är trendigt, och det är framförallt otroligt gott. Räkna med en kort kö, men det går fort och är väl värt väntan.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <span class="section-label">Detaljer</span>
+                
+                <div class="info-item">
+                    <h4>Adress</h4>
+                    <p>11 Rue de Châteaudun, 75009 Paris</p>
+                </div>
+
+                <div class="info-item">
+                    <h4>Prisnivå</h4>
+                    <p>€ (Ca 7€ för en Crookie)</p>
+                </div>
+
+                <div class="info-item">
+                    <h4>Missa inte</h4>
+                    <p>Deras klassiska baguetter är också prisbelönta, så köp med en hem om du ändå är där!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>© 2026 EMMY OHLSSON</p>
+            <p>Paris Hidden Gems Guide</p>
+        </div>
+        <div style="text-align: right;">
+            <p>FÖLJ MIG PÅ TIKTOK</p>
+            <p><b>@emmsano</b></p>
+        </div>
+    </footer>
+
+</body>
+</html>
