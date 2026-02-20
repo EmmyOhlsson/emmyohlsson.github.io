@@ -1,306 +1,399 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARIS TIPS | CAFÉS & PÂTISSERIES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --accent: #E5E5E5;
-            --paris-pink: #f8f1f1;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARIS TIPS | CAFÉS & PÂTISSERIES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #E5E5E5;
+      --paris-pink: #f8f1f1;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.4;
-            overflow-x: hidden;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        nav {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.9);
-            z-index: 100;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
 
-        nav a { text-decoration: none; color: #000; }
+    /* MINI NAV: Emmy vänster, Paris höger */
+    .mini-nav {
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      z-index: 100;
+      border-bottom: 1px solid #000;
+    }
 
-        header {
-            padding: 8vh 5%;
-            border-bottom: 1px solid #000;
-            background-color: var(--paris-pink);
-        }
+    .mini-nav a {
+      text-decoration: none;
+      color: #000;
+    }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 12vw, 8rem);
-            line-height: 0.85;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
+    /* Emmy som “signatur” */
+    .mini-left a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
 
-        .hero-subtitle {
-            margin-top: 2rem;
-            font-size: 1.2rem;
-            max-width: 600px;
-            font-weight: 300;
-        }
+    header {
+      padding: 8vh 5%;
+      border-bottom: 1px solid #000;
+      background-color: var(--paris-pink);
+    }
 
-        .section-label {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin: 4rem 5% 1rem 5%;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #000;
-            padding-bottom: 0.5rem;
-        }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 12vw, 8rem);
+      line-height: 0.85;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
 
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1px;
-            background-color: #000;
-            border-bottom: 1px solid #000;
-        }
+    .hero-subtitle {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      font-weight: 300;
+    }
 
-        .tip-card {
-            background-color: #fff;
-            padding: 3rem 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: background 0.3s ease;
-        }
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 4rem 5% 1rem 5%;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 0.5rem;
+    }
 
-        .tip-card:hover {
-            background-color: var(--paris-pink);
-        }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1px;
+      background-color: #000;
+      border-bottom: 1px solid #000;
+    }
 
-        .tip-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+    .tip-card {
+      background-color: #fff;
+      padding: 3rem 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .tip-card h4 {
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: #666;
-        }
+    .tip-card:hover {
+      background-color: var(--paris-pink);
+    }
 
-        .tip-card p {
-            font-size: 1rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
+    .tip-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .tag {
-            font-size: 0.6rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: #eee;
-            padding: 0.3rem 0.7rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
+    .tip-card h4 {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      color: #666;
+    }
 
-        footer {
-            padding: 4rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            font-size: 0.8rem;
-        }
+    .tip-card p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
 
-        .back-btn {
-            display: inline-block;
-            margin-top: 2rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #eee;
+      padding: 0.3rem 0.7rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
 
-        @media (max-width: 768px) {
-            .tips-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    footer {
+      padding: 4rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .tips-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========================= */
+    /* VINTAGE CTA – PARIS STYLE */
+    /* ========================= */
+    .vintage-cta {
+      padding: 10rem 5%;
+      text-align: center;
+      background-color: var(--paris-pink);
+      border-top: 1px solid #000;
+    }
+
+    .vintage-small-label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0.6;
+    }
+
+    .vintage-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+
+    .vintage-link {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: #000;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+      transition: opacity 0.3s ease;
+    }
+
+    .vintage-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: #000;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .vintage-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .vintage-link:hover {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .vintage-cta { padding: 6rem 5%; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <nav>
-        <div><a href="index.html">Emmy Ohlsson</a></div>
-        <div>Paris Guide 2026</div>
-    </nav>
+  <nav class="mini-nav">
+    <div class="mini-left">
+      <a href="index.html">Emmy Ohlsson</a>
+    </div>
+    <div class="mini-right">
+      <a href="paris.html">Paris Guide 2026</a>
+    </div>
+  </nav>
 
-    <header>
-        <span class="tag" style="background: #000; color: #fff;">Curated List</span>
-        <h1 class="hero-title">
-            Paris <br>
-            <i>Guide</i>
-        </h1>
-        <p class="hero-subtitle">
-            Efter 10 år på Franska skolan i Stockholm föll det sig naturligt att Paris blev mitt andra hem, och nu när min syster bor där har jag alltid en anledning att återvända. Så här är några av mina bästa tips.
-        </p>
-        <a href="index.html" class="back-btn">← Tillbaka till hem</a>
-    </header>
+  <header>
+    <span class="tag" style="background:#000; color:#fff;">Curated List</span>
+    <h1 class="hero-title">
+      Paris <br>
+      <i>Guide</i>
+    </h1>
+    <p class="hero-subtitle">
+      Efter 10 år på Franska skolan i Stockholm föll det sig naturligt att Paris blev mitt andra hem,
+      och nu när min syster bor där har jag alltid en anledning att återvända. Så här är några av mina bästa tips.
+    </p>
+    <a href="index.html" class="back-btn">← Tillbaka till hem</a>
+  </header>
 
-    <main>
-      <main>
-        <span class="section-label">Cafés</span>
-        <section class="tips-grid">
-            <a href="maison-louvard.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Crossianter med kakdeg</span>
-                    <h3>Maison Louvard</h3>
-                    <h4>Varför den är speciell:</h4>
-                    <p>Det var här man först kom på idén att kombinera en klassisk croissant med cookie-deg.</p>
-                </div>
-            </a>
-
-            <a href="carette.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Varm choklad</span>
-                    <h3>Carette</h3>
-                    <h4>Varför den är speciell:</h4>
-                    <p>Världsberömda för sin extremt tjocka varma choklad som serveras med en rejäl klick äkta vispgrädde.</p>
-                </div>
-            </a>
-
-            <a href="cafenuances.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Matcha</span>
-                    <h3>Café Nuances</h3>
-                    <h4>Varför den är speciell:</h4>
-                    <p>Ett av Paris trendigaste stopp för prisbelönt specialkaffe och matcha av högsta kvalitet.</p>
-                </div>
-            </a>
-
-            <a href="cafedeflore.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">People watching</span>
-                    <h3>Café de Flore</h3>
-                    <h4>Varför den är speciell:</h4>
-                    <p>Modeelitens mötesplats i Saint-Germain. Perfekt för en klassisk Café au Lait.</p>
-                </div>
-            </a>
-        </section>
-
-        <span class="section-label">Shopping</span>
-        <section class="tips-grid">
-            <a href="buly.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Personaliserat läppbalsam</span>
-                    <h3>Officine Universelle Buly</h3>
-                    <h4>Varför den är känd:</h4>
-                    <p>Du kan få ditt läppbalsam med dina initialer.</p>
-                </div>
-            </a>
-
-            <a href="marinmontagut.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Inredning</span>
-                    <h3>Marin Montagut</h3>
-                    <h4>Varför den är känd:</h4>
-                    <p>Handmålade glas och unika detaljer i en butik som känns som ett magiskt kuriosakabinett.</p>
-                </div>
-            </a>
-
-            <a href="delamain.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Bokhandel</span>
-                    <h3>Librairie Delamain</h3>
-                    <h4>Varför den är speciell:</h4>
-                    <p>En av stadens vackraste och äldsta bokhandlar, precis intill Palais-Royal.</p>
-                </div>
-            </a>
-
-            <a href="lebonmarche.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Varuhus</span>
-                    <h3>Le Bon Marché</h3>
-                    <h4>Varför den är känd:</h4>
-                    <p>Världens snyggaste varuhus.</p>
-                </div>
-            </a>
-        </section>
-
-        <span class="section-label">Lunch, middag & drinkar</span>
-        <section class="tips-grid">
-            <a href="chezjanou.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Lunch</span>
-                    <h3>Chez Janou</h3>
-                    <h4>Varför besöka:</h4>
-                    <p>Klassisk fransk bistro i Marais, som är känd för sin otroliga chokladmousse.</p>
-                </div>
-            </a>
-
-            <a href="kong.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Middag</span>
-                    <h3>Kong</h3>
-                    <h4>Varför besöka:</h4>
-                    <p>En av Paris mest omtalade middagsupplevelser. Kong är känd för sin ikoniska glaskupol med panoramautsikt, och för att ha synts i Sex and the City.</p>
-                </div>
-            </a>
-
-            <a href="brasserielipp.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Middag</span>
-                    <h3>Brasserie Lipp</h3>
-                    <h4>Varför besöka:</h4>
-                    <p>Traditionellt franskt brasserie med en historisk atmosfär som länge lockat både lokalbor och kända kulturpersonligheter.</p>
-                </div>
-            </a>
-
-            <a href="cravan.html" class="tip-card" style="text-decoration: none; color: inherit;">
-                <div>
-                    <span class="tag">Drinkar</span>
-                    <h3>Cravan</h3>
-                    <h4>Varför besöka:</h4>
-                    <p>Sofistikerade cocktails i en miljö som är lika delar konstgalleri och bar.</p>
-                </div>
-            </a>
-        </section>
-    </main>
-    </main>
-
-    <footer>
+  <main>
+    <span class="section-label">Cafés</span>
+    <section class="tips-grid">
+      <a href="maison-louvard.html" class="tip-card">
         <div>
-            <p>© 2026 EMMY OHLSSON</p>
-            <p>Paris Guide</p>
+          <span class="tag">Crossianter med kakdeg</span>
+          <h3>Maison Louvard</h3>
+          <h4>Varför den är speciell:</h4>
+          <p>Det var här man först kom på idén att kombinera en klassisk croissant med cookie-deg.</p>
         </div>
-        <div style="text-align: right;">
-            <p>FÖLJ MIG PÅ TIKTOK</p>
-            <p><b>@emmsano</b></p>
+      </a>
+
+      <a href="carette.html" class="tip-card">
+        <div>
+          <span class="tag">Varm choklad</span>
+          <h3>Carette</h3>
+          <h4>Varför den är speciell:</h4>
+          <p>Världsberömda för sin extremt tjocka varma choklad som serveras med en rejäl klick äkta vispgrädde.</p>
         </div>
-    </footer>
+      </a>
+
+      <a href="cafenuances.html" class="tip-card">
+        <div>
+          <span class="tag">Matcha</span>
+          <h3>Café Nuances</h3>
+          <h4>Varför den är speciell:</h4>
+          <p>Ett av Paris trendigaste stopp för prisbelönt specialkaffe och matcha av högsta kvalitet.</p>
+        </div>
+      </a>
+
+      <a href="cafedeflore.html" class="tip-card">
+        <div>
+          <span class="tag">People watching</span>
+          <h3>Café de Flore</h3>
+          <h4>Varför den är speciell:</h4>
+          <p>Modeelitens mötesplats i Saint-Germain. Perfekt för en klassisk Café au Lait.</p>
+        </div>
+      </a>
+    </section>
+
+    <span class="section-label">Shopping</span>
+    <section class="tips-grid">
+      <a href="buly.html" class="tip-card">
+        <div>
+          <span class="tag">Personaliserat läppbalsam</span>
+          <h3>Officine Universelle Buly</h3>
+          <h4>Varför den är känd:</h4>
+          <p>Du kan få ditt läppbalsam med dina initialer.</p>
+        </div>
+      </a>
+
+      <a href="marinmontagut.html" class="tip-card">
+        <div>
+          <span class="tag">Inredning</span>
+          <h3>Marin Montagut</h3>
+          <h4>Varför den är känd:</h4>
+          <p>Handmålade glas och unika detaljer i en butik som känns som ett magiskt kuriosakabinett.</p>
+        </div>
+      </a>
+
+      <a href="delamain.html" class="tip-card">
+        <div>
+          <span class="tag">Bokhandel</span>
+          <h3>Librairie Delamain</h3>
+          <h4>Varför den är speciell:</h4>
+          <p>En av stadens vackraste och äldsta bokhandlar, precis intill Palais-Royal.</p>
+        </div>
+      </a>
+
+      <a href="lebonmarche.html" class="tip-card">
+        <div>
+          <span class="tag">Varuhus</span>
+          <h3>Le Bon Marché</h3>
+          <h4>Varför den är känd:</h4>
+          <p>Världens snyggaste varuhus.</p>
+        </div>
+      </a>
+    </section>
+
+    <span class="section-label">Lunch, middag & drinkar</span>
+    <section class="tips-grid">
+      <a href="chezjanou.html" class="tip-card">
+        <div>
+          <span class="tag">Lunch</span>
+          <h3>Chez Janou</h3>
+          <h4>Varför besöka:</h4>
+          <p>Klassisk fransk bistro i Marais, som är känd för sin otroliga chokladmousse.</p>
+        </div>
+      </a>
+
+      <a href="kong.html" class="tip-card">
+        <div>
+          <span class="tag">Middag</span>
+          <h3>Kong</h3>
+          <h4>Varför besöka:</h4>
+          <p>En av Paris mest omtalade middagsupplevelser. Kong är känd för sin ikoniska glaskupol med panoramautsikt, och för att ha synts i Sex and the City.</p>
+        </div>
+      </a>
+
+      <a href="brasserielipp.html" class="tip-card">
+        <div>
+          <span class="tag">Middag</span>
+          <h3>Brasserie Lipp</h3>
+          <h4>Varför besöka:</h4>
+          <p>Traditionellt franskt brasserie med en historisk atmosfär som länge lockat både lokalbor och kända kulturpersonligheter.</p>
+        </div>
+      </a>
+
+      <a href="cravan.html" class="tip-card">
+        <div>
+          <span class="tag">Drinkar</span>
+          <h3>Cravan</h3>
+          <h4>Varför besöka:</h4>
+          <p>Sofistikerade cocktails i en miljö som är lika delar konstgalleri och bar.</p>
+        </div>
+      </a>
+    </section>
+
+    <section class="vintage-cta">
+      <p class="vintage-small-label">För er som älskar vintage och second hand.</p>
+      <h2>
+        Mina favorit vintagebutiker<br>
+        i Marais.
+      </h2>
+      <a href="vintage-guide.html" class="vintage-link">Ta del av listan →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 EMMY OHLSSON</p>
+      <p>Paris Guide</p>
+    </div>
+    <div style="text-align: right;">
+      <p>FÖLJ MIG PÅ TIKTOK</p>
+      <p><b>@emmsano</b></p>
+    </div>
+  </footer>
 
 </body>
 </html>
