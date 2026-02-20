@@ -145,6 +145,56 @@
             .info-grid { grid-template-columns: 1fr; }
             .info-box { border-right: none; border-bottom: 1px solid #000; }
         }
+       
+.tiktok-preview {
+    position: relative;
+    padding: 12rem 5%;
+    text-align: center;
+    overflow: hidden;
+    background: url('tiktok-bg.jpg') center/cover no-repeat;
+}
+
+.tiktok-overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.tiktok-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tiktok-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem,6vw,5rem);
+    margin: 2rem 0;
+}
+
+.tiktok-content p {
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 3rem;
+}
+.tiktok-wrapper {
+    background: #ffffff;
+    padding: 8rem 5%;
+}
+
+.tiktok-preview {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8rem 5%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: url('tiktok-bg.jpg') center/cover no-repeat;
+}
     </style>
 </head>
 <body>
@@ -174,17 +224,17 @@
             <div class="info-box">
                 <span class="label">Utbildning</span>
                 <h3>Berghs SoC</h3>
+                <p>Varje vecka på programmet innebär något nytt. Jag arbetar med verkliga case, korta deadlines och snabba leveranser i högt tempo.</p>
+            </div>
+            <div class="info-box">
+                <span class="label">Program</span>
+                <h3>Growth Marketing</h3>
                 <p>Fokuserar på datadriven tillväxt, psykologi bakom konvertering och hur man skalar varumärken i den digitala eran.</p>
             </div>
             <div class="info-box">
-                <span class="label">Sociala Medier</span>
+                <span class="label">Sociala medier</span>
                 <h3>TikTok Vloggar</h3>
-                <p>Skapar dagligt innehåll för en engagerad målgrupp. Expertis inom kortvideo-formatet och organisk räckvidd.</p>
-            </div>
-            <div class="info-box">
-                <span class="label">Expertis</span>
-                <h3>Marketing</h3>
-                <p>Growth loops, A/B-testing och visuell estetik. Jag förstår balansen mellan hårda siffror och kreativ höjd.</p>
+                <p>Skapar dagligt innehåll där jag delar vardagsvloggar, inspirerande fotoslides, outfitvideos och ibland gör jag även samarbeten.</p>
             </div>
         </section>
        <section class="paris-cta">
@@ -194,17 +244,33 @@
     
     <a href="paris.html" class="btn">Få mina Paris-tips</a>
 </section>
-<section class="tiktok-preview">
+<section class="tiktok-wrapper">
 
-<span class="label" style="color: #666;">Latest on TikTok</span>
+  <div class="tiktok-preview">
 
-<h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem;">Vloggar & Inblickar</h2>
+    <div class="tiktok-overlay"></div>
 
-<div style="height: 300px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; opacity: 0.5;">
+    <div class="tiktok-content">
+      <span class="label" style="color:#ccc;">TikTok</span>
 
-[Här kan du bädda in dina TikTok-videos]
+      <h2>
+        Dagliga vloggar.
+      </h2>
 
-</div>
+      <p>
+        Vloggar, påminnelse slides och outfitvideos.
+      </p>
+
+      <a href="https://www.tiktok.com/@emmsano"
+         target="_blank"
+         class="btn">
+         Explore my TikTok
+      </a>
+    </div>
+
+  </div>
+
+</section>
 
 </section>
     </main>
