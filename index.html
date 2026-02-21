@@ -1,290 +1,341 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTFOLIO | GROWTH & CREATIVE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO | GROWTH & CREATIVE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --accent: #E5E5E5;
-            --paris-pink: #f8f1f1; /* En extremt ljus touch av Paris-chic */
-        }
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #E5E5E5;
+      --paris-pink: #f8f1f1;
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.4;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
 
-        /* NAVIGATION */
-        nav {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.9);
-            z-index: 100;
-        }
+    /* ========================= */
+    /* NAV (desktop + mobile)    */
+    /* ========================= */
+    .site-nav{
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      z-index: 100;
+    }
 
-        /* HERO SECTION */
-        header {
-            padding: 8vh 5%;
-            border-bottom: 1px solid #000;
-        }
+    .site-nav .brand a{
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: none;
+      text-decoration: none;
+      color: #000;
+      white-space: nowrap;
+    }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 12vw, 10rem);
-            line-height: 0.85;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
+    .site-nav .nav-links{
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
 
-        .hero-subtitle {
-            margin-top: 2rem;
-            font-size: 1.2rem;
-            max-width: 600px;
-            font-weight: 300;
-        }
+    .site-nav .nav-links::-webkit-scrollbar{
+      display: none;
+    }
 
-        /* STATS / INFO SECTION */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            border-bottom: 1px solid #000;
-        }
+    .site-nav .nav-links a{
+      text-decoration: none;
+      color: #000;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 0.7rem;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
 
-        .info-box {
-            padding: 4rem 5%;
-            border-right: 1px solid #000;
-        }
+    .site-nav .nav-links a:hover{
+      opacity: 1;
+    }
 
-        .info-box:last-child { border-right: none; }
+    @media (max-width: 768px){
+      .site-nav{
+        padding: 1.25rem 5%;
+        gap: 0.75rem;
+      }
 
-        .label {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
+      .site-nav .brand a{
+        font-size: 1.05rem;
+      }
 
-        .info-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+      .site-nav .nav-links{
+        gap: 0.9rem;
+      }
 
-        /* CTA SECTION - PARIS */
-        .paris-cta {
-            background-color: var(--paris-pink);
-            padding: 10rem 5%;
-            text-align: center;
-            position: relative;
-        }
+      .site-nav .nav-links a{
+        font-size: 0.65rem;
+        letter-spacing: 1.6px;
+      }
+    }
 
-        .paris-cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 5rem);
-            margin-bottom: 2rem;
-        }
+    /* HERO SECTION */
+    header {
+      padding: 8vh 5%;
+      border-bottom: 1px solid #000;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-        }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 12vw, 10rem);
+      line-height: 0.85;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            background: #333;
-        }
+    .hero-subtitle {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      font-weight: 300;
+    }
 
-        /* TIKTOK GRID PREVIEW (Placeholder) */
-        .tiktok-preview {
-            padding: 5%;
-            background: #000;
-            color: #fff;
-        }
+    /* STATS / INFO SECTION */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      border-bottom: 1px solid #000;
+    }
 
-        /* FOOTER */
-        footer {
-            padding: 4rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            font-size: 0.8rem;
-        }
+    .info-box {
+      padding: 4rem 5%;
+      border-right: 1px solid #000;
+    }
 
-        i { font-family: 'Playfair Display', serif; font-style: italic; }
+    .info-box:last-child { border-right: none; }
 
-        @media (max-width: 768px) {
-            .info-grid { grid-template-columns: 1fr; }
-            .info-box { border-right: none; border-bottom: 1px solid #000; }
-        }
-       
-.tiktok-preview {
-    position: relative;
-    padding: 12rem 5%;
-    text-align: center;
-    overflow: hidden;
-    background: url('tiktok-bg.jpg') center/cover no-repeat;
-}
+    .label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
 
-.tiktok-overlay {
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.25);
-}
+    .info-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
 
-.tiktok-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    max-width: 700px;
-    margin: 0 auto;
-}
+    /* CTA SECTION - PARIS */
+    .paris-cta {
+      background-color: var(--paris-pink);
+      padding: 10rem 5%;
+      text-align: center;
+      position: relative;
+    }
 
-.tiktok-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem,6vw,5rem);
-    margin: 2rem 0;
-}
+    .paris-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 5rem);
+      margin-bottom: 2rem;
+    }
 
-.tiktok-content p {
-    font-weight: 300;
-    opacity: 0.85;
-    margin-bottom: 3rem;
-}
-.tiktok-wrapper {
-    background: #ffffff;
-    padding: 8rem 5%;
-}
+    .btn {
+      display: inline-block;
+      padding: 1.5rem 4rem;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
 
-.tiktok-preview {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 8rem 5%;
-    border-radius: 20px;
-    overflow: hidden;
-    background: url('tiktok-bg.jpg') center/cover no-repeat;
-}
-    </style>
+    .btn:hover {
+      transform: translateY(-5px);
+      background: #333;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 4rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+    }
+
+    i { font-family: 'Playfair Display', serif; font-style: italic; }
+
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .info-box { border-right: none; border-bottom: 1px solid #000; }
+    }
+
+    /* TikTok section (din nuvarande) */
+    .tiktok-preview {
+      position: relative;
+      padding: 12rem 5%;
+      text-align: center;
+      overflow: hidden;
+      background: url('tiktok-bg.jpg') center/cover no-repeat;
+    }
+
+    .tiktok-overlay {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .tiktok-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tiktok-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem,6vw,5rem);
+      margin: 2rem 0;
+    }
+
+    .tiktok-content p {
+      font-weight: 300;
+      opacity: 0.85;
+      margin-bottom: 3rem;
+    }
+
+    .tiktok-wrapper {
+      background: #ffffff;
+      padding: 8rem 5%;
+    }
+
+    .tiktok-preview {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8rem 5%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: url('tiktok-bg.jpg') center/cover no-repeat;
+    }
+  </style>
 </head>
+
 <body>
-<nav>
-    <div style="font-family: 'Playfair Display', serif; font-size: 1.2rem; text-transform: none;">Emmy Ohlsson</div>
-    <div>
-        <a href="https://www.tiktok.com/@emmsano?is_from_webapp=1&sender_device=pc" target="_blank" style="text-decoration:none; color:black; margin-left:20px;">TikTok</a>
-        <a href="https://www.linkedin.com/in/emmy-ohlsson-878b162a5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6u9ftMGuQ4qHEpQwUeKYMg%3D%3D" target="_blank" style="text-decoration:none; color:black; margin-left:20px;">LinkedIn</a>
-        <a href="mailto:collab.emmyohlsson@gmail.com" style="text-decoration:none; color:black; margin-left:20px;">Kontakt</a>
+
+  <nav class="site-nav">
+    <div class="brand">
+      <a href="index.html">Emmy Ohlsson</a>
     </div>
-</nav>
-    
 
-    <header>
-        <h1 class="hero-title">
-            Growth <br>
-            <i>& Content.</i>
-        </h1>
-        <p class="hero-subtitle">
-            Baserad i Stockholm. Studerar Growth Marketing på <b>Berghs School of Communication</b>. 
-            Digital kreatör som bygger communities genom autentiskt historieberättande på TikTok.
-        </p>
-    </header>
+    <div class="nav-links" aria-label="Snabblänkar">
+      <a href="https://www.tiktok.com/@emmsano?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.linkedin.com/in/emmy-ohlsson-878b162a5" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:collab.emmyohlsson@gmail.com">Kontakt</a>
+    </div>
+  </nav>
 
-    <main>
-        <section class="info-grid">
-            <div class="info-box">
-                <span class="label">Utbildning</span>
-                <h3>Berghs SoC</h3>
-                <p>Varje vecka på programmet innebär något nytt. Jag arbetar med verkliga case, korta deadlines och snabba leveranser i högt tempo.</p>
-            </div>
-            <div class="info-box">
-                <span class="label">Program</span>
-                <h3>Growth Marketing</h3>
-                <p>Fokuserar på datadriven tillväxt, psykologi bakom konvertering och hur man skalar varumärken i den digitala eran.</p>
-            </div>
-            <div class="info-box">
-                <span class="label">Sociala medier</span>
-                <h3>TikTok Vloggar</h3>
-                <p>Skapar dagligt innehåll där jag delar vardagsvloggar, inspirerande fotoslides, outfitvideos och ibland gör jag även samarbeten.</p>
-            </div>
-        </section>
-       <section class="paris-cta">
-    <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem;">Guide</span>
-    <h2>Ska du till Paris?</h2>
-    <p style="margin-bottom: 40px; opacity: 0.9;">De säger att man kan lära känna en person genom deras kaffe-beställning, men jag tänkte att det var roligare att lära känna mig genom Paris. Så här är en kurerad samling av platserna som känns som hemma.</p>
-    
-    <a href="paris.html" class="btn">Få mina Paris-tips</a>
-</section>
-<section class="tiktok-wrapper">
+  <header>
+    <h1 class="hero-title">
+      Growth <br>
+      <i>& Content.</i>
+    </h1>
+    <p class="hero-subtitle">
+      Baserad i Stockholm. Studerar Growth Marketing på <b>Berghs School of Communication</b>.
+      Digital kreatör som bygger communities genom autentiskt historieberättande på TikTok.
+    </p>
+  </header>
 
-  <div class="tiktok-preview">
+  <main>
+    <section class="info-grid">
+      <div class="info-box">
+        <span class="label">Utbildning</span>
+        <h3>Berghs SoC</h3>
+        <p>Varje vecka på programmet innebär något nytt. Jag arbetar med verkliga case, korta deadlines och snabba leveranser i högt tempo.</p>
+      </div>
+      <div class="info-box">
+        <span class="label">Program</span>
+        <h3>Growth Marketing</h3>
+        <p>Fokuserar på datadriven tillväxt, psykologi bakom konvertering och hur man skalar varumärken i den digitala eran.</p>
+      </div>
+      <div class="info-box">
+        <span class="label">Sociala medier</span>
+        <h3>TikTok Vloggar</h3>
+        <p>Skapar dagligt innehåll där jag delar vardagsvloggar, inspirerande fotoslides, outfitvideos och ibland gör jag även samarbeten.</p>
+      </div>
+    </section>
 
-    <div class="tiktok-overlay"></div>
-
-    <div class="tiktok-content">
-      <span class="label" style="color:#ccc;">TikTok</span>
-
-      <h2>
-        Dagliga vloggar.
-      </h2>
-
-      <p>
-        Vloggar, påminnelse slides och outfitvideos.
+    <section class="paris-cta">
+      <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem;">Guide</span>
+      <h2>Ska du till Paris?</h2>
+      <p style="margin-bottom: 40px; opacity: 0.9;">
+        De säger att man kan lära känna en person genom deras kaffe-beställning, men jag tänkte att det var roligare att lära känna mig genom Paris.
+        Så här är en kurerad samling av platserna som känns som hemma.
       </p>
+      <a href="paris.html" class="btn">Få mina Paris-tips</a>
+    </section>
 
-      <a href="https://www.tiktok.com/@emmsano"
-         target="_blank"
-         class="btn">
-         Explore my TikTok
-      </a>
+    <section class="tiktok-wrapper">
+      <div class="tiktok-preview">
+        <div class="tiktok-overlay"></div>
+
+        <div class="tiktok-content">
+          <span class="label" style="color:#ccc;">TikTok</span>
+          <h2>Dagliga vloggar.</h2>
+          <p>Vloggar, påminnelse slides och outfitvideos.</p>
+
+          <a href="https://www.tiktok.com/@emmsano" target="_blank" rel="noopener" class="btn">
+            Explore my TikTok
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 Emmy Ohlsson</p>
+      <p>Growth Marketer & Creator</p>
     </div>
-
-  </div>
-
-</section>
-
-</section>
-    </main>
-
-    <footer>
-        <div>
-            <p>© 2026 Emmy Ohlsson</p>
-            <p>Growth Marketer & Creator</p>
-        </div>
-        <div style="text-align: right;">
-            <p>LÅT OSS SAMARBETA</p>
-            <p><b>collab.emmyohlsson@gmail.com</b></p>
-        </div>
-    </footer>
+    <div style="text-align: right;">
+      <p>LÅT OSS SAMARBETA</p>
+      <p><b>collab.emmyohlsson@gmail.com</b></p>
+    </div>
+  </footer>
 
 </body>
 </html>
