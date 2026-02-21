@@ -144,25 +144,13 @@
             align-items: flex-end;
             font-size: 0.8rem;
         }
+@media (max-width: 768px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .description-box { border-right: none; border-bottom: 1px solid #000; }
 
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr; }
-            .description-box { border-right: none; border-bottom: 1px solid #000; }
-            .image-container { height: 50vh; }
-        }
-        @media (max-width: 768px) {
-  .image-container {
-    height: auto;
-    padding: 1.5rem 5%;
-    background: var(--paris-pink);
-  }
-
-  .image-container img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-    display: block;
-  }
+  /* Bilden ska fylla hela bredden, ingen kant */
+  .image-container { height: 50vh; padding: 0; margin: 0; }
+  .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
     </style>
 </head>
