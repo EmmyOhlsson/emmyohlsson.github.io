@@ -56,6 +56,7 @@
       letter-spacing:2px;
       font-weight:800;
       font-size:0.7rem;
+      white-space:nowrap;
     }
 
     .nav-links a{
@@ -160,6 +161,7 @@
       font-size:0.8rem;
       cursor:pointer;
       transition:transform 0.25s ease;
+      white-space:nowrap;
     }
 
     .btn:hover{
@@ -195,6 +197,22 @@
     /* MOBILE */
     @media (max-width:768px){
 
+      /* gör nav-länkarna tightare så det inte ser ut som “stort mellanrum” */
+      nav{
+        padding:1.2rem 5%;
+        align-items:flex-start;
+      }
+
+      .brand{
+        font-size:1.05rem;
+      }
+
+      .nav-links{
+        gap:10px;              /* ✅ mindre mellanrum */
+        font-size:0.65rem;     /* ✅ lite mindre text */
+        letter-spacing:1.5px;  /* ✅ mindre luft mellan bokstäver */
+      }
+
       .hero{
         text-align:left;
         padding:7vh 5% 6vh 5%;
@@ -225,7 +243,6 @@
 <body>
 
   <nav>
-    <!-- NU är den klickbar -->
     <a href="index.html" class="brand">Emmy Ohlsson</a>
 
     <div class="nav-links">
@@ -264,7 +281,6 @@
       <p>Paris Guide</p>
     </div>
 
-    <!-- NU ligger den snyggt längst ner till höger -->
     <div class="footer-right">
       <p>FÖLJ MIG PÅ TIKTOK</p>
       <p><b>@emmsano</b></p>
