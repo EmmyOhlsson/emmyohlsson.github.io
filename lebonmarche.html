@@ -1,67 +1,227 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LE BON MARCHÉ | PARIS GUIDE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root { --bg: #ffffff; --text: #000000; --paris-pink: #f8f1f1; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        nav { padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; position: sticky; top: 0; background: rgba(255,255,255,0.9); z-index: 100; border-bottom: 1px solid #000; }
-        nav a { text-decoration: none; color: #000; }
-        header { padding: 6vh 5%; background-color: var(--paris-pink); }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 5rem); line-height: 0.85; letter-spacing: -2px; text-transform: uppercase; margin: 1.5rem 0; }
-        .tag { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: #000; color: #fff; padding: 0.3rem 0.7rem; display: inline-block; }
-        .back-btn { display: inline-block; font-weight: 700; text-decoration: none; color: #000; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem; }
-        .image-container { width: 100%; height: 70vh; border-bottom: 1px solid #000; overflow: hidden; }
-        .image-container img { width: 100%; height: 100%; object-fit: cover; }
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid #000; }
-        .description-box { padding: 4rem 10% 4rem 5%; border-right: 1px solid #000; }
-        .info-box { padding: 4rem 5%; background-color: #fff; }
-        .section-label { display: block; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem; color: #666; }
-        h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .info-item { margin-bottom: 2rem; }
-        .info-item h4 { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; }
-        footer { padding: 4rem 5%; display: flex; justify-content: space-between; align-items: flex-end; font-size: 0.8rem; }
-        @media (max-width: 768px) { .content-grid { grid-template-columns: 1fr; } .description-box { border-right: none; border-bottom: 1px solid #000; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LE BON MARCHÉ | PARIS GUIDE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --paris-pink: #f8f1f1;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      z-index: 100;
+      border-bottom: 1px solid #000;
+    }
+
+    nav a { text-decoration: none; color: #000; }
+
+    /* Header */
+    header {
+      padding: 6vh 5%;
+      background-color: var(--paris-pink);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      line-height: 0.85;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin: 1.5rem 0;
+    }
+
+    .tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #000;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      display: inline-block;
+    }
+
+    .back-btn {
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
+
+    /* Image */
+    .image-container {
+      width: 100%;
+      height: 70vh;
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Content */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid #000;
+    }
+
+    .description-box {
+      padding: 4rem 10% 4rem 5%;
+      border-right: 1px solid #000;
+    }
+
+    .info-box {
+      padding: 4rem 5%;
+      background-color: #fff;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-item { margin-bottom: 2rem; }
+
+    .info-item h4 {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      padding: 4rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .description-box { border-right: none; border-bottom: 1px solid #000; }
+
+      /* Samma “utzoomade” känsla som din Maison Louvard-sida */
+      .image-container { height: 32vh; }
+      .image-container img { object-position: center 35%; }
+    }
+  </style>
 </head>
+
 <body>
-    <nav><div><a href="index.html">Emmy Ohlsson</a></div><div>Paris Guide 2026</div></nav>
-    <header>
-        <span class="tag">Shopping</span>
-        <h1 class="hero-title">Le Bon <br><i>Marché</i></h1>
-        <a href="paris.html" class="back-btn">← Tillbaka till listan</a>
-    </header>
-    <main>
-        <section class="image-container"><img src="lebonmarche.jpg" alt="Le Bon Marché Rive Gauche"></section>
-        <section class="content-grid">
-            <div class="description-box">
-                <span class="section-label">Om stället</span>
-                <h3>Världens snyggaste varuhus.</h3>
-                <p>Glöm de stora kedjorna. Le Bon Marché på Rive Gauche är där parisskruden verkligen glänser. Det är här jag går för att inspireras av det senaste modet och den fantastiska arkitekturen med de berömda rulltrapporna.</p>
-                <br>
-                <p>Även om man inte planerar att shoppa loss är det väl värt ett besök bara för att andas in atmosfären. Det känns lyxigt utan att vara lika kaotiskt som de andra stora varuhusen.</p>
-            </div>
-            <div class="info-box">
-                <span class="section-label">Detaljer</span>
-                <div class="info-item"><h4>Adress</h4><p>24 Rue de Sèvres, 75007 Paris</p></div>
-                <div class="info-item"><h4>Missa inte</h4><p>Matavdelningen "La Grande Épicerie" i huset bredvid. Det är en mathimmel!</p></div>
-                <div class="info-item"><h4>Tips</h4><p>Kolla in bokavdelningen högst upp, den är otroligt bra kurerad.</p></div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div>
-            <p>© 2026 EMMY OHLSSON</p>
-            <p>Paris Guide</p>
+
+  <nav>
+    <div><a href="index.html">Emmy Ohlsson</a></div>
+    <div><a href="paris.html">Paris Guide</a></div>
+  </nav>
+
+  <header>
+    <span class="tag">Shopping</span>
+    <h1 class="hero-title">Le Bon <br><i>Marché</i></h1>
+    <a href="paris.html" class="back-btn">← Tillbaka till listan</a>
+  </header>
+
+  <main>
+    <section class="image-container">
+      <img src="lebonmarche.jpg" alt="Le Bon Marché Rive Gauche">
+    </section>
+
+    <section class="content-grid">
+      <div class="description-box">
+        <span class="section-label">Om stället</span>
+        <h3>Världens snyggaste varuhus.</h3>
+        <p>
+          Glöm de stora kedjorna. Le Bon Marché på Rive Gauche är där parisskruden verkligen glänser.
+          Det är här jag går för att inspireras av det senaste modet och den fantastiska arkitekturen
+          med de berömda rulltrapporna.
+        </p>
+        <br>
+        <p>
+          Även om man inte planerar att shoppa loss är det väl värt ett besök bara för att andas in atmosfären.
+          Det känns lyxigt utan att vara lika kaotiskt som de andra stora varuhusen.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <span class="section-label">Detaljer</span>
+
+        <div class="info-item">
+          <h4>Adress</h4>
+          <p>24 Rue de Sèvres, 75007 Paris</p>
         </div>
-        <div style="text-align: right;">
-            <p>FÖLJ MIG PÅ TIKTOK</p>
-            <p><b>@emmsano</b></p>
+
+        <div class="info-item">
+          <h4>Missa inte</h4>
+          <p>Matavdelningen "La Grande Épicerie" i huset bredvid. Det är en mathimmel!</p>
         </div>
-    </footer>
-    </body>
+
+        <div class="info-item">
+          <h4>Tips</h4>
+          <p>Kolla in bokavdelningen högst upp, den är otroligt bra kurerad.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 EMMY OHLSSON</p>
+      <p>Paris Guide</p>
+    </div>
+    <div style="text-align: right;">
+      <p>FÖLJ MIG PÅ TIKTOK</p>
+      <p><b>@emmsano</b></p>
+    </div>
+  </footer>
+
+</body>
 </html>
