@@ -5,19 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vintage Edit | Le Marais</title>
 
-  <!-- Fonts (matchar din main site) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-
-  <!-- (Valfritt men rekommenderat) GA4 - byt till ditt Measurement ID -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 
   <style>
     :root{
@@ -37,27 +25,18 @@
       overflow-x:hidden;
     }
 
-    /* NAV (enkel, i linje med din estetik) */
+    /* NAV */
     nav{
       padding:2rem 5%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      font-size:0.7rem;
-      font-weight:800;
-      letter-spacing:2px;
-      text-transform:uppercase;
+      gap:1rem;
       position:sticky;
       top:0;
       background:rgba(255,255,255,0.9);
       z-index:100;
       border-bottom:1px solid var(--border);
-    }
-
-    nav a{
-      text-decoration:none;
-      color:var(--text);
-      margin-left:20px;
     }
 
     .brand{
@@ -66,7 +45,28 @@
       text-transform:none;
       letter-spacing:0;
       font-weight:900;
+      white-space:nowrap;
     }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;         /* <-- gör att det blir snygg wrap på mobil */
+      justify-content:flex-end;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-weight:800;
+      font-size:0.7rem;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      opacity:0.85;
+      transition:opacity .2s ease;
+    }
+    .nav-links a:hover{opacity:1;}
 
     /* HERO */
     .hero{
@@ -88,10 +88,10 @@
 
     .hero h1{
       font-family:'Playfair Display', serif;
-      font-size:clamp(2.2rem, 6vw, 4.5rem);
+      font-size:clamp(2.1rem, 6vw, 4.5rem);
       line-height:1.05;
       letter-spacing:-1px;
-      margin-bottom:1.5rem;
+      margin-bottom:1.25rem;
     }
 
     .hero p{
@@ -102,7 +102,7 @@
       font-size:1.05rem;
     }
 
-    /* FORM BOX */
+    /* WRAP / BOX */
     .wrap{
       padding:7vh 5% 10vh 5%;
       background:#fff;
@@ -133,12 +133,13 @@
       display:flex;
       gap:12px;
       justify-content:center;
+      align-items:stretch;
       flex-wrap:wrap;
       margin-bottom:1.5rem;
     }
 
     input[type="email"]{
-      width:min(460px, 90vw);
+      width:min(460px, 92vw);
       padding:1.1rem 1.2rem;
       border:1px solid var(--border);
       font-family:'Inter', sans-serif;
@@ -147,12 +148,12 @@
       background:#fff;
     }
 
-    input[type="email"]::placeholder{
-      opacity:0.6;
-    }
+    input[type="email"]::placeholder{opacity:0.6;}
 
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:1.1rem 2.2rem;
       background:#000;
       color:#fff;
@@ -164,18 +165,12 @@
       font-size:0.8rem;
       cursor:pointer;
       transition:transform 0.25s ease, opacity 0.25s ease;
+      white-space:nowrap;
     }
 
     .btn:hover{
       transform:translateY(-3px);
       opacity:0.92;
-    }
-
-    .fineprint{
-      font-size:0.85rem;
-      opacity:0.65;
-      max-width:680px;
-      margin:0 auto;
     }
 
     .backlink{
@@ -189,7 +184,6 @@
       font-size:0.75rem;
       opacity:0.75;
     }
-
     .backlink:hover{opacity:1;}
 
     /* FOOTER */
@@ -198,14 +192,63 @@
       display:flex;
       justify-content:space-between;
       align-items:flex-end;
+      gap:2rem;
       font-size:0.8rem;
       border-top:1px solid var(--border);
     }
 
+    /* MOBILE TWEAKS */
     @media (max-width: 768px){
-      .hero{padding:8vh 5% 6vh 5%;}
-      .box{padding-top:3rem;}
-      footer{flex-direction:column; gap:1.5rem; align-items:flex-start;}
+      nav{
+        padding:1.3rem 5%;
+        align-items:flex-start;
+      }
+
+      .brand{font-size:1.05rem;}
+
+      .nav-links{
+        gap:12px;
+        font-size:0.65rem; /* mindre text på mobil */
+        letter-spacing:1.6px;
+      }
+
+      .hero{
+        padding:7vh 5% 6vh 5%;
+        text-align:left;  /* lite mer “editorial” på mobil */
+      }
+
+      .label{margin-bottom:1.5rem;}
+
+      .hero p{
+        font-size:1rem;
+      }
+
+      .box{
+        padding-top:3rem;
+        text-align:left;
+      }
+
+      form{
+        justify-content:flex-start;
+      }
+
+      input[type="email"],
+      .btn{
+        width:100%;
+      }
+
+      .btn{
+        padding:1.15rem 1.4rem;
+      }
+
+      footer{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      footer div:last-child{
+        text-align:left !important;
+      }
     }
   </style>
 </head>
@@ -213,12 +256,13 @@
 <body>
   <nav>
     <div class="brand">Emmy Ohlsson</div>
-    <div>
+
+    <div class="nav-links">
       <a href="index.html">Hem</a>
       <a href="paris.html">Paris</a>
       <a href="https://www.tiktok.com/@emmsano" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://www.linkedin.com/in/emmy-ohlsson-878b162a5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6u9ftMGuQ4qHEpQwUeKYMg%3D%3D" target="_blank" style="text-decoration:none; color:black; margin-left:20px;">LinkedIn</a>
-     <a href="mailto:collab.emmyohlsson@gmail.com">Kontakt</a>
+      <a href="https://www.linkedin.com/in/emmy-ohlsson-878b162a5?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B6u9ftMGuQ4qHEpQwUeKYMg%3D%3D" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:collab.emmyohlsson@gmail.com">Kontakt</a>
     </div>
   </nav>
 
@@ -226,33 +270,20 @@
     <section class="hero">
       <span class="label">Vintage Edit</span>
       <h1>Mina bästa second hand- &<br>vintagebutiker i Marais.</h1>
-      <p>
-       Perfekt om du vill hitta “rätt” ställen utan att scrolla på TikTok och Instagram i timmar.
-      </p>
+      <p>Perfekt om du vill hitta “rätt” ställen utan att scrolla på TikTok och Instagram i timmar.</p>
     </section>
 
     <section class="wrap">
       <div class="box">
         <h2>Få listan skickad till din inkorg</h2>
-        <p class="sub">
-          En separat PDF med mina personliga favoriter och vad jag själv letar efter i varje butik.
-        </p>
+        <p class="sub">En separat PDF med mina personliga favoriter och vad jag själv letar efter i varje butik.</p>
 
-        <!-- FORM: Formspree (enklast för GitHub Pages)
-             1) Skapa ett Formspree-form och få din URL
-             2) Byt action-länken nedan till din egen
-             3) Ställ in redirect i Formspree till tack.html (eller använd _next här)
-        -->
         <form
           action="https://formspree.io/f/YOUR_FORMSPREE_ID"
           method="POST"
-          onsubmit="
-            /* GA4 event (om du aktiverat GA4-scriptet ovan) */
-            try { gtag('event','submit_vintage_email',{event_category:'LeadMagnet',event_label:'Vintage Edit'}); } catch(e){}
-          "
+          onsubmit="try { gtag('event','submit_vintage_email',{event_category:'LeadMagnet',event_label:'Vintage Edit'}); } catch(e){}"
         >
           <input type="email" name="email" placeholder="Din email" required>
-          <!-- Redirect efter submit (Formspree stödjer ofta _next) -->
           <input type="hidden" name="_next" value="tack.html">
           <button type="submit" class="btn">Få listan</button>
         </form>
