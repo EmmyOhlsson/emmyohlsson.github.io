@@ -229,6 +229,22 @@
     @media (max-width: 768px) {
       .vintage-cta { padding: 6rem 5%; }
     }
+    /* iPad + mobil: undvik "svart bakgrund + gap"-rutan */
+@media (max-width: 1024px) {
+  .tips-grid {
+    background-color: transparent; /* tar bort svarta ytan */
+    gap: 0;                        /* tar bort 1px-gap */
+    border-bottom: 1px solid #000; /* behåll en clean avslutning */
+  }
+
+  .tip-card {
+    border-bottom: 1px solid #000; /* gör linjerna mellan korten */
+  }
+
+  .tip-card:last-child {
+    border-bottom: none;
+  }
+}
   </style>
 </head>
 
