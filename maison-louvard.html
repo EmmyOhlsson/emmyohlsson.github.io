@@ -150,6 +150,20 @@
             .description-box { border-right: none; border-bottom: 1px solid #000; }
             .image-container { height: 50vh; }
         }
+        @media (max-width: 768px) {
+  .image-container {
+    height: auto;
+    padding: 1.5rem 5%;
+    background: var(--paris-pink);
+  }
+
+  .image-container img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
     </style>
 </head>
 <body>
