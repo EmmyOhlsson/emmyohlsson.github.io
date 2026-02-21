@@ -147,15 +147,14 @@
       font-size: 0.8rem;
     }
 
-    /* Mobile */
     @media (max-width: 768px) {
-      .content-grid { grid-template-columns: 1fr; }
-      .description-box { border-right: none; border-bottom: 1px solid #000; }
+  .content-grid { grid-template-columns: 1fr; }
+  .description-box { border-right: none; border-bottom: 1px solid #000; }
 
-      /* Bilden fyller hela bredden, ingen kant */
-      .image-container { height: 50vh; padding: 0; margin: 0; }
-      .image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    }
+  /* Mer utzoomad känsla på mobil */
+  .image-container { height: 32vh; }          /* var 50vh */
+  .image-container img { object-position: center 35%; } 
+}
   </style>
 </head>
 
