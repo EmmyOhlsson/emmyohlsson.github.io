@@ -1,219 +1,228 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAFÉ DE FLORE | PARIS GUIDE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --paris-pink: #f8f1f1;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAFÉ DE FLORE | PARIS GUIDE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --paris-pink: #f8f1f1;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Navigation */
-        nav {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.9);
-            z-index: 100;
-            border-bottom: 1px solid #000;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        nav a { text-decoration: none; color: #000; }
+    /* Navigation */
+    nav {
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      z-index: 100;
+      border-bottom: 1px solid #000;
+    }
 
-        /* Header Area */
-        header {
-            padding: 6vh 5%;
-            background-color: var(--paris-pink);
-        }
+    nav a { text-decoration: none; color: #000; }
 
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.85;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            margin: 1.5rem 0;
-        }
+    /* Header */
+    header {
+      padding: 6vh 5%;
+      background-color: var(--paris-pink);
+    }
 
-        .tag {
-            font-size: 0.6rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: #000;
-            color: #fff;
-            padding: 0.3rem 0.7rem;
-            display: inline-block;
-        }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      line-height: 0.85;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      margin: 1.5rem 0;
+    }
 
-        .back-btn {
-            display: inline-block;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 1rem;
-        }
+    .tag {
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #000;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      display: inline-block;
+    }
 
-        /* Image Section */
-        .image-container {
-            width: 100%;
-            height: 70vh;
-            border-bottom: 1px solid #000;
-            overflow: hidden;
-        }
+    .back-btn {
+      display: inline-block;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* Image */
+    .image-container {
+      width: 100%;
+      height: 70vh;
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+    }
 
-        /* Content Section */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            border-bottom: 1px solid #000;
-        }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .description-box {
-            padding: 4rem 10% 4rem 5%;
-            border-right: 1px solid #000;
-        }
+    /* Content */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid #000;
+    }
 
-        .info-box {
-            padding: 4rem 5%;
-            background-color: #fff;
-        }
+    .description-box {
+      padding: 4rem 10% 4rem 5%;
+      border-right: 1px solid #000;
+    }
 
-        .section-label {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            color: #666;
-        }
+    .info-box {
+      padding: 4rem 5%;
+      background-color: #fff;
+    }
 
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
+    .section-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      color: #666;
+    }
 
-        .info-item {
-            margin-bottom: 2rem;
-        }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
 
-        .info-item h4 {
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
+    .info-item { margin-bottom: 2rem; }
 
-        footer {
-            padding: 4rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            font-size: 0.8rem;
-        }
+    .info-item h4 {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
 
-        @media (max-width: 768px) {
-            .content-grid { grid-template-columns: 1fr; }
-            .description-box { border-right: none; border-bottom: 1px solid #000; }
-            .image-container { height: 50vh; }
-        }
-    </style>
+    footer {
+      padding: 4rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .description-box { border-right: none; border-bottom: 1px solid #000; }
+
+      /* Samma “utzoomade” känsla */
+      .image-container { height: 32vh; }
+      .image-container img { object-position: center 35%; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <nav>
-        <div><a href="index.html">Emmy Ohlsson</a></div>
-        <div>Paris Guide 2026</div>
-    </nav>
+  <nav>
+    <div><a href="index.html">Emmy Ohlsson</a></div>
+    <div><a href="paris.html">Paris Guide</a></div>
+  </nav>
 
-    <header>
-        <span class="tag">Cafés</span>
-        <h1 class="hero-title">Café <br><i>de Flore</i></h1>
-        <a href="paris.html" class="back-btn">← Tillbaka till listan</a>
-    </header>
+  <header>
+    <span class="tag">Cafés</span>
+    <h1 class="hero-title">Café <br><i>de Flore</i></h1>
+    <a href="paris.html" class="back-btn">← Tillbaka till listan</a>
+  </header>
 
-    <main>
-        <section class="image-container">
-            <img src="cafedeflore.jpg" alt="Café de Flore exteriör">
-        </section>
+  <main>
+    <section class="image-container">
+      <img src="cafedeflore.jpg" alt="Café de Flore exteriör">
+    </section>
 
-        <section class="content-grid">
-            <div class="description-box">
-                <span class="section-label">Om stället</span>
-                <h3>Fika och ta det lugnt.</h3>
-                <p>
-                    Café de Flore är mer än bara ett café; det är en institution. Efter mina 10 år på Franska skolan har Saint-Germain alltid känts som mitt andra hem, och Flore är platsen där tiden på något sätt står stilla mitt i stadens brus.
-                </p>
-                <br>
-                <p>
-                    Här sätter man sig på de ikoniska gröna stolarna för att titta på folk, skriva i sin anteckningsbok eller bara njuta av en perfekt serverad Café au Lait. Det är en plats genomsyrad av historia, där modeeliten och intellektuella har mötts i decennier.
-                </p>
-            </div>
+    <section class="content-grid">
+      <div class="description-box">
+        <span class="section-label">Om stället</span>
+        <h3>Fika och ta det lugnt.</h3>
+        <p>
+          Café de Flore är mer än bara ett café; det är en institution. Efter mina 10 år på Franska skolan
+          har Saint-Germain alltid känts som mitt andra hem, och Flore är platsen där tiden på något sätt
+          står stilla mitt i stadens brus.
+        </p>
+        <br>
+        <p>
+          Här sätter man sig på de ikoniska gröna stolarna för att titta på folk, skriva i sin anteckningsbok
+          eller bara njuta av en perfekt serverad Café au Lait. Det är en plats genomsyrad av historia, där
+          modeeliten och intellektuella har mötts i decennier.
+        </p>
+      </div>
 
-            <div class="info-box">
-                <span class="section-label">Detaljer</span>
-                
-                <div class="info-item">
-                    <h4>Adress</h4>
-                    <p>172 Bd Saint-Germain, 75006 Paris</p>
-                </div>
+      <div class="info-box">
+        <span class="section-label">Detaljer</span>
 
-                <div class="info-item">
-                    <h4>Vibe</h4>
-                    <p>Historisk, chic och oslagbart parisisk.</p>
-                </div>
-
-                <div class="info-item">
-                    <h4>Tips</h4>
-                    <p>Sitt ute på terrassen (även på vintern, de har bra värmelampor) för den bästa upplevelsen.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div>
-            <p>© 2026 EMMY OHLSSON</p>
-            <p>Paris Guide</p>
+        <div class="info-item">
+          <h4>Adress</h4>
+          <p>172 Bd Saint-Germain, 75006 Paris</p>
         </div>
-        <div style="text-align: right;">
-            <p>FÖLJ MIG PÅ TIKTOK</p>
-            <p><b>@emmsano</b></p>
+
+        <div class="info-item">
+          <h4>Vibe</h4>
+          <p>Historisk, chic och oslagbart parisisk.</p>
         </div>
-    </footer>
+
+        <div class="info-item">
+          <h4>Tips</h4>
+          <p>Sitt ute på terrassen (även på vintern, de har bra värmelampor) för den bästa upplevelsen.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2026 EMMY OHLSSON</p>
+      <p>Paris Guide</p>
+    </div>
+    <div style="text-align: right;">
+      <p>FÖLJ MIG PÅ TIKTOK</p>
+      <p><b>@emmsano</b></p>
+    </div>
+  </footer>
 
 </body>
 </html>
