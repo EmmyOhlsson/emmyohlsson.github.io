@@ -407,7 +407,7 @@
       <a href="vintage-guide.html" class="vintage-link" id="vintage-cta">Ta del av listan →</a>
     </section>
   </main>
-
+ 
   <footer>
     <div>
       <p>© 2026 EMMY OHLSSON</p>
@@ -418,6 +418,37 @@
       <p><b>@emmsano</b></p>
     </div>
   </footer>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
+    document.addEventListener("click", function(e) {
+      const card = e.target.closest("a.tip-card");
+      if (!card) return;
+
+      const tipName = card.getAttribute("data-tip-name") || "unknown";
+      const tipCategory = card.getAttribute("data-tip-category") || "unknown";
+      const tipUrl = card.getAttribute("href") || "";
+
+      console.log("Paris tip clicked 🗺️", { tipName, tipCategory, tipUrl });
+
+      dataLayer.push({
+        event: "paris_tip_click",
+        tipcard_name: tipName,
+        tipcard_category: tipCategory,
+        tipcard_url: tipUrl,
+        page_path: window.location.pathname
+      });
+    });
+
+    document.getElementById("vintage-cta")?.addEventListener("click", function() {
+      console.log("Vintage CTA clicked 🧥");
+
+      dataLayer.push({
+        event: "vintage_cta_click",
+        button_id: "vintage-cta",
+        page_path: window.location.pathname
+      });
+    });
+  </script>
 </body>
 </html>
