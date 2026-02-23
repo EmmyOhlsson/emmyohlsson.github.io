@@ -259,6 +259,105 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       overflow: hidden;
       background: url('tiktok-bg.jpg') center/cover no-repeat;
     }
+    /* ===== Paris Weather (estetiskt, editorial) ===== */
+#paris-weather{
+  padding: 6rem 5%;
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+
+.weather-card{
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.weather-eyebrow{
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.weather-title{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.weather-sub{
+  font-weight: 300;
+  opacity: 0.85;
+  max-width: 52ch;
+}
+
+.weather-right{
+  text-align: right;
+}
+
+.weather-temp{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.weather-desc{
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  opacity: 0.85;
+}
+
+.weather-meta{
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.weather-pill{
+  border: 1px solid #000;
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+}
+
+.weather-icon{
+  width: 56px;
+  height: 56px;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+  opacity: 0.9;
+  filter: grayscale(100%) contrast(120%);
+}
+
+@media (max-width: 768px){
+  .weather-card{
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .weather-right{
+    text-align: left;
+  }
+  .weather-meta{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
   </style>
 </head>
 
@@ -326,6 +425,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
      <a href="paris.html" class="btn" id="paris-cta">Få mina Paris-tips</a>
     </section>
+    <section id="paris-weather" aria-label="Väder i Paris">
+  <div class="weather-card">
+    <div class="weather-left">
+      <span class="weather-eyebrow">Paris • Weather</span>
+      <h2 class="weather-title">Just nu i Paris</h2>
+      <p class="weather-sub" id="weather-line">Laddar prognos…</p>
+    </div>
+
+    <div class="weather-right">
+      <div class="weather-temp" id="weather-temp">—°</div>
+      <div class="weather-desc" id="weather-desc">—</div>
+      <div class="weather-meta">
+        <span class="weather-pill" id="weather-feels">Feels like —°</span>
+        <span class="weather-pill" id="weather-wind">Wind — m/s</span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="tiktok-wrapper">
       <div class="tiktok-preview">
@@ -358,6 +475,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p><b>collab.emmyohlsson@gmail.com</b></p>
     </div>
   </footer>
+  <script>
+  const apiKey = "f48351151b3925c83ae8ef536983c17c";
+  const city = "Paris";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=sv&appid=${apiKey}`;
+
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const feels = Math.round(data.main.feels_like);
+      const wind = Math.round(data.wind.speed);
+      const desc = data.weather?.[0]?.description || "—";
+      const icon = data.weather?.[0]?.icon;
+
+      // Skriv ut snyggt: versal först, resten som det är
+      const niceDesc = desc.charAt(0).toUpperCase() + desc.slice(1);
+
+      document.getElementById("weather-temp").textContent = `${temp}°`;
+      document.getElementById("weather-desc").textContent = niceDesc.toUpperCase();
+      document.getElementById("weather-feels").textContent = `Feels like ${feels}°`;
+      document.getElementById("weather-wind").textContent = `Wind ${wind} m/s`;
+
+      // Editorial rad
+      document.getElementById("weather-line").innerHTML = `
+        ${niceDesc} <img class="weather-icon" alt="" src="https://openweathermap.org/img/wn/${icon}@2x.png">
+      `;
+    })
+    .catch(() => {
+      document.getElementById("weather-line").textContent = "Kunde inte hämta väder just nu.";
+    });
+</script>
 <script>
 window.dataLayer = window.dataLayer || [];
 
