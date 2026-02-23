@@ -233,6 +233,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p><b>@emmsano</b></p>
     </div>
   </footer>
-
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: "paris_tip_view",
+    tip_name: "Café de Flore",
+    tip_category: "cafes",
+    page_path: window.location.pathname
+  });
+  console.log("Tip page loaded ✅ Café de Flore");
+</script>
 </body>
 </html>
