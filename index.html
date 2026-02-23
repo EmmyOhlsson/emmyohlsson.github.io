@@ -358,6 +358,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p><b>collab.emmyohlsson@gmail.com</b></p>
     </div>
   </footer>
+<script>
+window.dataLayer = window.dataLayer || [];
 
+document.getElementById("paris-cta")?.addEventListener("click", function() {
+  console.log("Paris CTA clicked 🚀");
+
+  dataLayer.push({
+    event: "paris_cta_click",
+    button_id: "paris-cta",
+    page_path: window.location.pathname
+  });
+});
+</script>
 </body>
 </html>
